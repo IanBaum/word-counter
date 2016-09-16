@@ -1,16 +1,21 @@
 <?php
-    class word_counter{
+    class Word_Counter{
+
+      private $count = 0;
+
+      function getCount(){
+        return $this->count;
+      }
 
         function count_word($target, $sentence){
-            $word_count = 0;
             $sentence_lower = strtolower($sentence);
             $sentence_words = explode(" ", $sentence_lower);
             foreach($sentence_words as $word){
                 if($word === $target){
-                    $word_count++;
+                    $this->count++;
                 }
             }
-            return $word_count;
+            return $this->count;
         }
     }
 ?>

@@ -41,5 +41,18 @@
             //Assert
             $this->assertEquals(2, $result);
         }
+
+        function testcount_word_no_match(){
+            //Arrange
+            $testword_counter = new word_counter;
+            $test_target = "dog";
+            $test_sentence = "The cat knocked the mug off the table.";
+
+            //Act
+            $result = $testword_counter->count_word($test_target, $test_sentence);
+
+            //Assert
+            $this->assertEquals(0, $result);
+        }
     }
 ?>
